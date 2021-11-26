@@ -28,6 +28,10 @@ app.use(cors());
 // routes middleware
 readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
 
+app.get("/", (req, res) => {
+  res.send("Deployed Successfully")
+})
+
 // port
 const port = process.env.PORT || 8000;
 
